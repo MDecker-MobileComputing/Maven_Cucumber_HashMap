@@ -14,25 +14,23 @@ public class StepDefinitions {
     private HashMap<String,String> _hashMap = null;
 
 
-    @Given("die HashMap ist für den Typ String initialisiert")
-    public void givenDieHashMapFuerStringIstInitialiert() {
-
+    @Given( "die HashMap ist für den Typ String initialisiert" )
+    public void givenHashMapInitialisiert() {
+        
         _hashMap = new HashMap<>();
     }
-
-
-    @When("ich füge den Wert {string} unter dem Schlüssel {string} hinzu")
-    public void whenIchFuegeWertHinzu(String wert, String schluessel) {
-
-        _hashMap.put(schluessel, wert);
+    
+    @When( "ich füge den Wert {string} unter dem Schlüssel {string} hinzu" )
+    public void whenWertFuerSchluesselDazu( String wert, String schluessel ) {
+        
+        _hashMap.put( schluessel, wert );
     }
-
-
-    @Then("erhalte ich den Wert {string} für den Schlüssel {string}")
-    public void thenWertUnterSchluessel(String wert, String schluessel) {
-
-        String ergebnis = _hashMap.get(schluessel);
+            
+    @Then( "erhalte ich den Wert {string} für den Schlüssel {string}" )
+    public void thenWertFuerSchluessel( String wert, String schluessel ) {
+        
+        String ergebnis = _hashMap.get( schluessel );
         assertEquals( wert, ergebnis );
     }
-
+    
 }
