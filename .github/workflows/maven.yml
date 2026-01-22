@@ -16,6 +16,8 @@ jobs:
         java-version: '25'
         distribution: 'temurin'
         cache: maven
+    - name: Permissions von Maven-Wrapper fixen
+      run: chmod u+x mvnw
     - name: FatJar-Datei mit Maven bauen
       run: ./mvnw --batch-mode clean test
 
